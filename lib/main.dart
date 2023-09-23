@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'about_us.dart'; // Importa la pantalla Acerca de Nosotros
+import 'game_list.dart'; // Importa la pantalla Lista de Juegos
+import 'specific_game.dart'; // Importa la pantalla Juego Específico
+import 'specific_item.dart'; // Importa la pantalla específica
+import 'tournament_info.dart'; // Importa la pantalla Información del Torneo
+import 'tournament_inscription.dart'; // Importa la pantalla Inscripción en el Torneo
+import 'user_kart.dart'; // Importa la pantalla Carrito de Usuario
+import 'user_payment.dart'; // Importa la pantalla Pago del Usuario
+import 'user_profile.dart'; // Importa la pantalla Perfil de Usuario
 
 void main() {
   runApp(const MyApp());
