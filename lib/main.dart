@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'LGS',
       theme: ThemeData(fontFamily: 'Raleway'),
-      home: UserLogIn(),
+      home: HomePage(),
     );
   }
 }
