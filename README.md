@@ -14,3 +14,31 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+--------------------------------------------------------------
+
+# Tip Time
+
+- Colores.
+- Iconos.
+- Containers con esquinas redondeadas y colores.
+- Textos con style.
+- TextFields con su controller.
+- Paddings.
+- Columnas y filas y sus alineaciones.
+- Interacción del usuario.
+- Estados.
+- Formateo de strings.
+- Radio group.
+- Primary color.
+
+## Lo que me costo mas trabajo.
+
+- 
+
+## Lo que aprendi.
+
+- 
+
+## Screenshots de la app.
+
