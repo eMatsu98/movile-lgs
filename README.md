@@ -32,16 +32,18 @@ samples, guidance on mobile development, and a full API reference.
 - Radio group.
 - Primary color.
 
-## Lo que me costo mas trabajo.
+## Lo que me costo más trabajo.
 
-- 
+- Integracion y uso de providers.
 
-## Lo que aprendi.
+## Lo qué aprendi.
 
-- 
+- Widget switch
+- Providers
 
 ## Screenshots de la app.
 
+![Imagen EPICA para probar](https://github.com/eMatsu98/movile-lgs/blob/main/imgsAct/pruebaImagenAnakin.jpg?raw=true)
 
 --------------------------------------------------------------
 
@@ -55,6 +57,6 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Lo que aprendi.
 
-- 
+- Widget Checkbox.
 
 ## Screenshots de la app.
