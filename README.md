@@ -42,3 +42,19 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Screenshots de la app.
 
+
+--------------------------------------------------------------
+
+# Forage
+
+
+
+## Lo que me costo mas trabajo.
+
+- 
+
+## Lo que aprendi.
+
+- 
+
+## Screenshots de la app.
