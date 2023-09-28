@@ -17,6 +17,8 @@
 
 - Integracion y uso de providers.
 - Recordar temas pasados.
+- Gestion de los estados.
+- Interfaz de usuario.
 
 ## Lo qué aprendi.
 
