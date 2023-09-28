@@ -1,16 +1,29 @@
-# tip_time
+# Tip Time
 
-A new Flutter project.
+- Colores.
+- Iconos.
+- Containers con esquinas redondeadas y colores.
+- Textos con style.
+- TextFields con su controller.
+- Paddings.
+- Columnas y filas y sus alineaciones.
+- Interacción del usuario.
+- Estados.
+- Formateo de strings.
+- Radio group.
+- Primary color.
 
-## Getting Started
+## Lo que me costo más trabajo.
 
-This project is a starting point for a Flutter application.
+- Integracion y uso de providers.
+- Recordar temas pasados.
 
-A few resources to get you started if this is your first Flutter project:
+## Lo qué aprendi.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Widget switch.
+- Providers.
+- Practicar los temas anteriores.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots de la app.
+
+![Imagen EPICA para probar](https://github.com/eMatsu98/movile-lgs/blob/main/imgsAct/pruebaImagenAnakin.jpg?raw=true)
