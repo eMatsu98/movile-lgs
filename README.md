@@ -28,4 +28,15 @@
 
 ## Screenshots de la app.
 
-![Imagen EPICA para probar](https://github.com/eMatsu98/movile-lgs/blob/main/imgsAct/pruebaImagenAnakin.jpg?raw=true)
+1. En la primera ss se puede observar como es la interfaz de la app que contiene textFields, botones, switch, etc.
+![Primera SS de nuestra app Tip_time](https://github.com/eMatsu98/movile-lgs/blob/tip_time/imgs/tip_1.jpg?raw=true)
+2. Continuamos observando el funcionamiento de la app que es calcular la propina con otra cantidad.
+![Segunda SS de nuestra app Tip_time](https://github.com/eMatsu98/movile-lgs/blob/tip_time/imgs/tip_2.jpg?raw=true)
+3. Seguimos viendo como funciona la app.
+![Tercera SS de nuestra app Tip_time](https://github.com/eMatsu98/movile-lgs/blob/tip_time/imgs/tip_3.jpg?raw=true)
+4. Otra prueba con otra cantidad.
+
+![Cuarta SS de nuestra app Tip_time](https://github.com/eMatsu98/movile-lgs/blob/tip_time/imgs/tip_4.jpg?raw=true)
+
+Igualmente contamos con un video del funcionamiento: https://youtube.com/shorts/q92t3j0OkDw?si=5k28HV5Fcnd7gK0j
+
