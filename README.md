@@ -1,6 +1,18 @@
 # Forage app
 
-
+- Colores.
+- Iconos.
+- Containers con esquinas redondeadas y colores.
+- Textos con style.
+- TextFields con su controller.
+- Paddings.
+- Columnas y filas y sus alineaciones.
+- Interacción del usuario.
+- Estados.
+- Formateo de strings.
+- Radio group.
+- Primary color.
+- TextFields.
 
 ## Lo que me costo mas trabajo.
 
