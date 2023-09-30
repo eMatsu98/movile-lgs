@@ -18,8 +18,10 @@
 
 - Manejo de providers.
 - Recordar otros temas.
-- Encontrar los iconos necesarios.
+- Encontrar los íconos necesarios.
 - Subir los archivos al repositorio del proyecto.
+- Implementar el provider entre varias páginas.
+- Guardar valores de controllers con provider en estructuras de datos para utilizarlos en otras páginas.
 
 ## Lo que aprendi.
 
@@ -27,6 +29,9 @@
 - Manejo de estados (Mejoramos).
 - Busqueda de iconos en la documentacion.
 - Manejo de branches en github.
+- Crear actualizar y eliminar variables con provider
+-	Utilizar variables del provider
+
 
 ## Screenshots de la app.
 1. En la primera ss se puede observar como es la interfaz de la app.
