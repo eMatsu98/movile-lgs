@@ -16,11 +16,17 @@
 
 ## Lo que me costo mas trabajo.
 
-- 
+- Manejo de providers.
+- Recordar otros temas.
+- Encontrar los iconos necesarios.
+- Subir los archivos al repositorio del proyecto.
 
 ## Lo que aprendi.
 
-- Widget Checkbox.
+- Providers.
+- Manejo de estados (Mejoramos).
+- Busqueda de iconos en la documentacion.
+- Manejo de branches en github.
 
 ## Screenshots de la app.
 1. En la primera ss se puede observar como es la interfaz de la app.
