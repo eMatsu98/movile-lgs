@@ -13,6 +13,14 @@
 - Radio group.
 - Primary color.
 - TextFields.
+- Uso de widgets
+- Uso de packages
+- Manejo de estados con provider
+- Requests HTTP
+- Navegar entre páginas
+- Pasar parámetros
+- Serialización y creación de modelos
+
 
 ## Lo que me costo mas trabajo.
 
@@ -29,8 +37,8 @@
 - Manejo de estados (Mejoramos).
 - Busqueda de iconos en la documentacion.
 - Manejo de branches en github.
-- Crear actualizar y eliminar variables con provider
--	Utilizar variables del provider
+- Crear actualizar y eliminar variables con provider.
+-	Utilizar variables del provider.
 
 
 ## Screenshots de la app.
