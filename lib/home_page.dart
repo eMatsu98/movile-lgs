@@ -83,6 +83,7 @@ class HomePage extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        backgroundColor: Colors.grey[900],
         items:
         <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -90,15 +91,15 @@ class HomePage extends StatelessWidget {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_rounded),
+            icon: Icon(Icons.shopping_bag_rounded, color: Colors.white70,),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.game_controller_solid),
+            icon: Icon(CupertinoIcons.game_controller_solid, color: Colors.white70,),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.emoji_events_rounded),
+            icon: Icon(Icons.emoji_events_rounded, color: Colors.white70,),
             label: '',
           ),
         ],

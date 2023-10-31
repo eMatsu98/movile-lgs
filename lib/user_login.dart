@@ -113,33 +113,6 @@ class UserLogIn extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items:
-        <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_rounded),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_rounded),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.game_controller_solid),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.emoji_events_rounded),
-            label: '',
-          ),
-        ],
-        //currentIndex: 0,
-        selectedItemColor: Color(0xFFFF0056),
-        //onTap: _onItemTapped,
-      ),
     );
   }
 }
