@@ -144,8 +144,8 @@ class FrontPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: newsList.take(2).map((item) =>
                           Container(
-                            width: screenWidth * 0.33,
-                            height: screenWidth * 0.33,
+                            width: screenWidth * 0.3,
+                            height: screenWidth * 0.3,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
                               image: DecorationImage(
@@ -161,8 +161,8 @@ class FrontPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: newsList.skip(2).take(2).map((item) =>
                           Container(
-                            width: screenWidth * 0.33,
-                            height: screenWidth * 0.33,
+                            width: screenWidth * 0.3,
+                            height: screenWidth * 0.3,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
                               image: DecorationImage(
@@ -187,25 +187,28 @@ class FrontPage extends StatelessWidget {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         backgroundColor: Colors.grey[900],
-        items: <BottomNavigationBarItem>[
+        items:
+        <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home_rounded),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_rounded, color: Colors.white70),
+            icon: Icon(Icons.shopping_bag_rounded, color: Colors.white70,),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.game_controller_solid, color: Colors.white70),
+            icon: Icon(CupertinoIcons.game_controller_solid, color: Colors.white70,),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.emoji_events_rounded, color: Colors.white70),
+            icon: Icon(Icons.emoji_events_rounded, color: Colors.white70,),
             label: '',
           ),
         ],
+        //currentIndex: 0,
         selectedItemColor: Color(0xFFFF0056),
+        //onTap: _onItemTapped,
       ),
     );
   }

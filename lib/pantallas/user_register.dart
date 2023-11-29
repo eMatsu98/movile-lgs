@@ -41,6 +41,7 @@ class UserRegister extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: screenWidth*0.15, right: screenWidth*0.15),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Usuario", style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.bold)),
                   SizedBox(height: 7,),
