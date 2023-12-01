@@ -149,7 +149,7 @@ class _UserProfileState extends State<UserProfile> {
 
   Widget _userUid() {
     return TextFormField(
-      initialValue: user?.uid ?? 'Username',
+      initialValue: user?.email ?? 'Username',
       style: TextStyle(
         color: Colors.white,
         fontSize: 24,
@@ -222,7 +222,9 @@ class _UserProfileState extends State<UserProfile> {
   }
 
   Widget _signOutButton() {
-    return ElevatedButton(onPressed: signOut, child: const Text('Sign Out'));
+    // return ElevatedButton(onPressed: signOut, child: const Text('Sign Out'), style: ButtonStyle(
+    //     backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFF0056)),
+    //   ),);
     return ElevatedButton(
       onPressed: signOut,
       child: Text(
@@ -321,6 +323,7 @@ class _UserProfileState extends State<UserProfile> {
                         padding: EdgeInsets.symmetric(
                             horizontal: screenWidth * 0.15),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ShowField('Usuario', userData.name),
                             SizedBox(
@@ -330,93 +333,11 @@ class _UserProfileState extends State<UserProfile> {
                             SizedBox(
                               height: 37,
                             ),
-                            Text("Correo Electrónico",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              width: 300,
-                              height: 37,
-                              child: TextFormField(
-                                initialValue: 'is726532@iteso.mx',
-                                style: TextStyle(color: Colors.white),
-                                cursorColor: Color(0xFFFF0056),
-                                decoration: InputDecoration(
-                                  // labelText: 'Correo Electrónico',
-                                  enabledBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.white)),
-                                  // hintText: 'Correo electrónico',
-                                  hintStyle: TextStyle(color: Colors.white70),
-                                  //labelStyle: TextStyle(color: Color(0xFFFF0056)),
-                                  focusedBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                    color: Color(0xFFFF0056),
-                                  )),
-                                ),
-                              ),
-                            ),
+                            ShowField('Contraseña', ''),
                             SizedBox(
                               height: 37,
                             ),
-                            Text("Contraseña",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              width: 300,
-                              height: 37,
-                              child: TextFormField(
-                                initialValue: '1234567',
-                                style: TextStyle(color: Colors.white),
-                                cursorColor: Color(0xFFFF0056),
-                                obscureText: true,
-                                decoration: InputDecoration(
-                                  enabledBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.white)),
-                                  // hintText: 'Contraseña',
-                                  hintStyle: TextStyle(color: Colors.white70),
-                                  //labelStyle: TextStyle(color: Color(0xFFFF0056)),
-                                  focusedBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                    color: Color(0xFFFF0056),
-                                  )),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 37,
-                            ),
-                            Text("Confirmar Contraseña",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              width: 300,
-                              height: 37,
-                              child: TextFormField(
-                                initialValue: '1234567',
-                                style: TextStyle(color: Colors.white),
-                                cursorColor: Color(0xFFFF0056),
-                                obscureText: true,
-                                decoration: InputDecoration(
-                                  enabledBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.white)),
-                                  // hintText: 'Contraseña',
-                                  hintStyle: TextStyle(color: Colors.white70),
-                                  //labelStyle: TextStyle(color: Color(0xFFFF0056)),
-                                  focusedBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                    color: Color(0xFFFF0056),
-                                  )),
-                                ),
-                              ),
-                            ),
+                            ShowField('Confirmar Contraseña', ''),
                           ],
                         ),
                       ),
@@ -545,7 +466,7 @@ class _UserProfileState extends State<UserProfile> {
                               width: 300,
                               height: 37,
                               child: TextFormField(
-                                initialValue: 'GrizzlyFreak7',
+                                initialValue: 'Emilio',
                                 style: TextStyle(color: Colors.white),
                                 cursorColor: Color(0xFFFF0056),
                                 decoration: InputDecoration(
@@ -572,7 +493,7 @@ class _UserProfileState extends State<UserProfile> {
                               width: 300,
                               height: 37,
                               child: TextFormField(
-                                initialValue: 'is726532@iteso.mx',
+                                initialValue: 'emilio@hotmail.com',
                                 style: TextStyle(color: Colors.white),
                                 cursorColor: Color(0xFFFF0056),
                                 decoration: InputDecoration(

@@ -132,12 +132,7 @@ class _UserIdentificationState extends State<UserIdentification> {
       width: 300,
       height: 37,
       child: ElevatedButton(
-        onPressed: (){
-           _login ? signIn() : createUser();
-           setState(() {
-             _errorMessage();
-           });
-        },
+        onPressed: _login ? signIn : createUser,
         child: Text(
           title,
           style: TextStyle(
@@ -226,8 +221,8 @@ class _UserIdentificationState extends State<UserIdentification> {
                 height: 70,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.15),
+                padding: EdgeInsets.only(
+                    left: screenWidth * 0.15, right: screenWidth * 0.15),
                 child: Column(
                   children: <Widget>[
                     _entryField('Correo electrónico', _controllerEmail, false),
@@ -304,8 +299,8 @@ class _UserIdentificationState extends State<UserIdentification> {
                 height: 70,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.15),
+                padding: EdgeInsets.only(
+                    left: screenWidth * 0.15, right: screenWidth * 0.15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -391,8 +386,8 @@ class _UserIdentificationState extends State<UserIdentification> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: screenWidth * 0.15),
+                padding: EdgeInsets.only(
+                    left: screenWidth * 0.15, right: screenWidth * 0.15),
                 child: Column(
                   children: [
                     SizedBox(

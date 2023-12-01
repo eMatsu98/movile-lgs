@@ -96,12 +96,12 @@ class LgsStore extends StatelessWidget {
                         ),
                         footer: GridTileBar(
                           backgroundColor: Color.fromARGB(150, 33, 33, 33),
-                          title: Text('\$ ${index + 1}.${(index + 1)*11}', style: TextStyle(color: Colors.grey[300], fontWeight: FontWeight.bold,),),
+                          title: Text('\$ ${index + 1}.${(index + 1)*11}', style: TextStyle(color: Colors.grey[300], fontSize: 9, fontWeight: FontWeight.bold,),),
                           trailing: Align(
                             alignment: Alignment.centerRight,
                             child: IconButton(
                               onPressed: (){},
-                              icon: Icon(Icons.add_shopping_cart_rounded, color: Colors.white, size: 18,),
+                              icon: Icon(Icons.add_shopping_cart_rounded, color: Colors.white, size: 12,),
                             ),
                           ),
                         ),

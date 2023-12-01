@@ -25,7 +25,7 @@ class GameList extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.grey[900],
-      extendBodyBehindAppBar: true,
+      // extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -44,7 +44,7 @@ class GameList extends StatelessWidget {
                   children:
                     gamesList.take(7).map((item) =>
                       Padding(
-                        padding: EdgeInsets.only(bottom: 8.5, top: 8.5),
+                        padding: EdgeInsets.symmetric(horizontal: 4),
                         child: Container(
                           width: screenWidth * 0.75,
                           height: screenHeight * 0.13,
