@@ -36,12 +36,12 @@ class GameList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(left: screenWidth*0.125, right: screenWidth*0.125),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth*0.125),
               child: Column(
                 children: [
                   Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: 
+                  children:
                     gamesList.take(7).map((item) =>
                       Padding(
                         padding: EdgeInsets.only(bottom: 8.5, top: 8.5),

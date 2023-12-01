@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-class UserPayment extends StatefulWidget {
-  @override
-  _UserPaymentState createState() => _UserPaymentState();
-}
-
-class _UserPaymentState extends State<UserPayment> {
+class UserPayment extends StatelessWidget {
+  UserPayment({
+    super.key,
+  });
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
