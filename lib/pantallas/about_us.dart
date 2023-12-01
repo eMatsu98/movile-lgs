@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:video_player/video_player.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '/widgets/side_menu.dart';
+import 'package:lgs/widgets/side_menu.dart';
+import 'package:video_player/video_player.dart';
 
 final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -39,14 +37,10 @@ class AboutUs extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () => _scaffoldKey.currentState?.openDrawer(),
-          icon: Icon(Icons.menu
-          ), iconSize: 17, color: Colors.white,),
         title: Text('¿Quiénes Somos?', style: TextStyle(color: Colors.white),),
         centerTitle: true,
       ),
-      drawer: SideMenu(),
+      drawer: NavigationDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -227,4 +221,13 @@ class AboutUs extends StatelessWidget {
       ),
     );
   }
+}
+
+class NavigationDrawer extends StatelessWidget {
+  NavigationDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Drawer(
+        child: SideMenu(),
+      );
 }

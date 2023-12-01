@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-
-import '/widgets/side_menu.dart';
+import 'package:lgs/widgets/side_menu.dart';
 
 final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -31,13 +29,8 @@ class GameList extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () => _scaffoldKey.currentState?.openDrawer(),
-          icon: Icon(Icons.menu
-          ), iconSize: 17, color: Colors.white,),
-        //title: Text('LGS', style: TextStyle(color: Colors.white),),
       ),
-      drawer: SideMenu(),
+      drawer: NavigationDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -106,4 +99,13 @@ class GameList extends StatelessWidget {
       ),
     );
   }
+}
+
+class NavigationDrawer extends StatelessWidget {
+  NavigationDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Drawer(
+     child: SideMenu(),
+  );
 }

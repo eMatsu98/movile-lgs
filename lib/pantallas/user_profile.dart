@@ -1,19 +1,150 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '/widgets/side_menu.dart';
 
 final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-class UserProfile extends StatelessWidget {
+class UserProfile extends StatefulWidget {
   UserProfile({
     super.key,
   });
 
   @override
+  State<UserProfile> createState() => _UserProfileState();
+}
+
+class _UserProfileState extends State<UserProfile> {
+  ImageProvider _currentImage = AssetImage("assets/images/user.png");
+  bool _defaultImage = true;
+
+  Future _pickImageFromGallery() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    if(image == null) return;
+    setState(() {
+      _currentImage = FileImage(File(image.path));
+      _defaultImage = false;
+    });
+  }
+
+  Future _pickImageFromCamera() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.camera);
+
+    if(image == null) return;
+    setState(() {
+      _currentImage = FileImage(File(image.path));
+      _defaultImage = false;
+    });
+  }
+
+  Future _setDefaultImage() async {
+    setState(() {
+      _currentImage = AssetImage("assets/images/user.png");
+      _defaultImage = true;
+    });
+  }
+
+    Future<void> _showCameraOptionsDefault(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Color(0xFF181818),
+          title: Text(
+            'Seleccionar opción',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: () {
+                    _pickImageFromCamera();
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFFF0056),
+                  ),
+                  child: Text('Tomar foto'),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    _pickImageFromGallery();
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFFF0056),
+                  ),
+                  child: Text('Elegir de la galería'),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _showCameraOptions(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Color(0xFF181818),
+          title: Text(
+            'Seleccionar opción',
+            style: TextStyle(color: Colors.white),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                ElevatedButton(
+                  onPressed: () {
+                    _pickImageFromCamera();
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFFF0056),
+                  ),
+                  child: Text('Tomar foto'),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    _pickImageFromGallery();
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFFF0056),
+                  ),
+                  child: Text('Elegir de la galería'),
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    _setDefaultImage();
+                    Navigator.of(context).pop();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFFF0056),
+                  ),
+                  child: Text('Eliminar imagen'),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: Colors.grey[900],
@@ -21,11 +152,6 @@ class UserProfile extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          onPressed: () => _scaffoldKey.currentState?.openDrawer(),
-          icon: Icon(Icons.menu
-          ), iconSize: 17, color: Colors.white,),
-        //title: Text('LGS', style: TextStyle(color: Colors.white),),
         actions: [
           TextButton(
             onPressed: () {
@@ -35,7 +161,7 @@ class UserProfile extends StatelessWidget {
           ),
         ],
       ),
-      drawer: SideMenu(),
+      drawer: NavigationDrawer(),
       body: Stack(
         children: [
           Column(
@@ -46,7 +172,8 @@ class UserProfile extends StatelessWidget {
                   // height: screenHeight*0.3,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage('https://marketplace.canva.com/EAFqNrAJpQs/1/0/1600w/canva-neutral-pink-modern-circle-shape-linkedin-profile-picture-WAhofEY5L1U.jpg'), // Replace with your image URL
+                      // _selectedImage != null ? FileImage(_selectedImage!) : NetworkImage('');
+                      image: _currentImage,//FileImage(_selectedImage!),//NetworkImage('https://marketplace.canva.com/EAFqNrAJpQs/1/0/1600w/canva-neutral-pink-modern-circle-shape-linkedin-profile-picture-WAhofEY5L1U.jpg'), // Replace with your image URL
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -186,7 +313,7 @@ class UserProfile extends StatelessWidget {
                       padding: EdgeInsets.only(right: 17.0),
                       child: FloatingActionButton(
                         onPressed: () {
-                          // Subir foto
+                          _defaultImage ? _showCameraOptionsDefault(context) : _showCameraOptions(context);
                         },
                         child: Icon(Icons.camera_alt_rounded),
                         backgroundColor: Color(0xFFFF0056),
@@ -202,4 +329,13 @@ class UserProfile extends StatelessWidget {
       ),
     );
   }
+}
+
+class NavigationDrawer extends StatelessWidget {
+  NavigationDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) => Drawer(
+        child: SideMenu(),
+      );
 }

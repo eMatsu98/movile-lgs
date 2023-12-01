@@ -1,9 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:lgs/pantallas/about_us.dart';
+import 'package:lgs/pantallas/game_list.dart';
+import 'package:lgs/pantallas/home_page.dart';
+import 'package:lgs/pantallas/lgs_store.dart';
+import 'package:lgs/pantallas/user_cart.dart';
+import 'package:lgs/pantallas/user_profile.dart';
 
 class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+
+    Widget Browse(String title, BuildContext cont, Widget page) {
+      return ListTile(
+        leading: Text(""),
+        title: Text(
+          title,
+          style: TextStyle(
+            color: Colors.white70,
+            fontSize: 13,
+          ),
+        ),
+        onTap: () {
+          Navigator.of(cont).pushReplacement(MaterialPageRoute(
+            builder: (cont) => page,
+          ));
+        },
+      );
+    }
 
     return SizedBox(
       width: screenWidth * 0.3,
@@ -29,41 +53,12 @@ class SideMenu extends StatelessWidget {
                 ],
               ),
             ),
-            ListTile(
-              leading: Text(""),
-              title: Text('Profile', style: TextStyle(color: Colors.white70, fontSize: 13, ),),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '../pantallas/user_profile');
-              },
-            ),
-            ListTile(
-              leading: Text(""),
-              title: Text('Videojuegos', style: TextStyle(color: Colors.white70, fontSize: 13, ),),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '../pantallas/game_list');
-              },
-            ),
-            ListTile(
-              leading: Text(""),
-              title: Text('LGS Store', style: TextStyle(color: Colors.white70, fontSize: 13, ),),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '../pantallas/lgs_store');
-              },
-            ),
-            ListTile(
-              leading: Text(""),
-              title: Text('Acerca de LGS', style: TextStyle(color: Colors.white70, fontSize: 13, ),),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '../pantallas/about_us');
-              },
-            ),
-            ListTile(
-              leading: Text(""),
-              title: Text('Carrito de Compras', style: TextStyle(color: Colors.white70, fontSize: 13, ),),
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '../pantallas/user_cart');
-              },
-            ),
+            Browse("Inicio", context, HomePage()),
+            Browse("Profile", context, UserProfile()),
+            Browse("Videojuegos", context, GameList()),
+            Browse("LGS Store", context, LgsStore()),
+            Browse("Acerca de LGS", context, AboutUs()),
+            Browse("Carrito de Compras", context, UserCart()),
           ],
         ),
       ),

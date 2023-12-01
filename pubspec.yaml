@@ -40,6 +40,10 @@ dependencies:
   loading_indicator: ^3.1.1
   #carousel: ^0.1.0
   carousel_slider: ^4.2.1
+  firebase_auth: ^4.15.0
+  firebase_core: ^2.24.0
+  cloud_firestore: ^4.13.3
+  image_picker: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +70,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/lgs.png
+    - assets/images/user.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

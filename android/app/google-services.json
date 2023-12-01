@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "82425368279",
+    "project_id": "legendary-gaming-series",
+    "storage_bucket": "legendary-gaming-series.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82425368279:android:c29f27ee5673825412ea92",
+        "android_client_info": {
+          "package_name": "com.example.lgs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdLK9HXk9xPPTFA6XjnlOyUcugJkudTzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
