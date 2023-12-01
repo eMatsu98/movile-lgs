@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SpecificItem extends StatefulWidget {
-  @override
-  _SpecificItemState createState() => _SpecificItemState();
-}
-
-class _SpecificItemState extends State<SpecificItem> {
+class SpecificItem extends StatelessWidget {
+  SpecificItem({
+    super.key,
+  });
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

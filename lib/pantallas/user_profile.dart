@@ -77,7 +77,7 @@ class UserProfile extends StatelessWidget {
                   children: <Widget>[
                     SizedBox(height: 70,),
                     Padding(
-                      padding: EdgeInsets.only(left: screenWidth*0.15, right: screenWidth*0.15),
+                      padding: EdgeInsets.symmetric(horizontal: screenWidth*0.15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

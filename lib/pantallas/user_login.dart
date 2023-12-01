@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 class UserLogIn extends StatelessWidget {
-  const UserLogIn({
+  UserLogIn({
     super.key,
   });
 
@@ -39,7 +39,7 @@ class UserLogIn extends StatelessWidget {
             ),
             SizedBox(height: 70,),
             Padding(
-              padding: EdgeInsets.only(left: screenWidth*0.15, right: screenWidth*0.15),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth*0.15),
               child: Column(
                 children: [
                   SizedBox(

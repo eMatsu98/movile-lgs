@@ -54,7 +54,7 @@ class FrontPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(left: screenWidth*0.15, right: screenWidth*0.15),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth*0.15),
               child: Column(
                 children: [
                   Stack(

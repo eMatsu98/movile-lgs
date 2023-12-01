@@ -49,97 +49,75 @@ class SpecificGame extends StatelessWidget {
         // centerTitle: true,
       ),
       drawer: SideMenu(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(height: 17,),
-          Text('SUPER SMASH BROS', style: TextStyle(color: Color(0xFFFF0056), fontSize: 24, fontWeight: FontWeight.w900,),),
-          Padding(
-            padding: EdgeInsets.only(left: screenWidth*0.15, right: screenWidth*0.15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: screenWidth*0.125, right: screenWidth*0.125),
-                  child: Column(
-                    children: [
-                      Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                          Container(
-                            height: screenHeight*0.85,
-                            child: ListView.builder(
-                              scrollDirection: Axis.vertical,
-                              itemCount: specificGame.length,
-                              itemBuilder: (context, index) {
-                                Map<String, String> game = specificGame[index];
-                                return/* InkWell(
-                                onTap: (){},
-                                child:*/ Column(
-                                  children: [
-                                    Container(
-                                      width: 300,
-                                      child: Card(
-                                        margin: EdgeInsets.all(8.0),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(7.0),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            children: <Widget>[
-                                              SizedBox(height: 7),
-                                              Text("Torneo: ${game['Torneo']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 18, fontWeight: FontWeight.bold)),
-                                              SizedBox(height: 8),
-                                              Text("Fecha: ${game['Fecha']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
-                                              SizedBox(height: 8),
-                                              Text("Hora: ${game['Hora']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
-                                              SizedBox(height: 8),
-                                              Text("Modalidad: ${game['Modalidad']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
-                                              SizedBox(height: 8),
-                                              Text("Precio: ${game['Precio']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
-                                              SizedBox(height: 8),
-                                              Text("Integrantes: ${game['Integrantes']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
-                                              SizedBox(height: 17),
-                                              SizedBox(
-                                                width: 180,
-                                                height: 37,
-                                                child: 
-                                                ElevatedButton(
-                                                  onPressed: () {},
-                                                  child:
-                                                    Text('Inscribirse', style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w900),),
-                                                  style: ButtonStyle(
-                                                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFF0056)),
-                                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                      RoundedRectangleBorder(
-                                                        borderRadius: BorderRadius.all(Radius.circular(7)),
-                                                        side: BorderSide(color: Color(0xFFFF0056)),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(height: 7),
-                                            ],
-                                          ),
-                                        ),
-                                        /*),*/
-                                      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 17,),
+            Text('SUPER SMASH BROS', style: TextStyle(color: Color(0xFFFF0056), fontSize: 24, fontWeight: FontWeight.w900,),),
+            SizedBox(height: 37,),
+            Expanded(
+              child: Container(
+                width: 240,
+                child: ListView.builder(
+                  padding: EdgeInsets.zero,
+                  scrollDirection: Axis.vertical,
+                  itemCount: specificGame.length,
+                  itemBuilder: (context, index) {
+                    Map<String, String> game = specificGame[index];
+                    return/* InkWell(
+                    onTap: (){},
+                    child:*/ Container(
+                      width: 270,
+                      child: Card(
+                        margin: EdgeInsets.only(bottom: 30.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            SizedBox(height: 13),
+                            Text("Torneo: ${game['Torneo']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 18, fontWeight: FontWeight.bold)),
+                            SizedBox(height: 7),
+                            Text("Fecha: ${game['Fecha']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
+                            SizedBox(height: 7),
+                            Text("Hora: ${game['Hora']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
+                            SizedBox(height: 7),
+                            Text("Modalidad: ${game['Modalidad']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
+                            SizedBox(height: 7),
+                            Text("Precio: ${game['Precio']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
+                            SizedBox(height: 7),
+                            Text("Integrantes: ${game['Integrantes']}", style: TextStyle(fontFamily: 'Roboto', fontSize: 15)),
+                            SizedBox(height: 13),
+                            SizedBox(
+                              width: 210,
+                              height: 37,
+                              child: 
+                              ElevatedButton(
+                                onPressed: () {},
+                                child:
+                                  Text('Inscribirse', style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w900),),
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all<Color>(Color(0xFFFF0056)),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(7)),
+                                      side: BorderSide(color: Color(0xFFFF0056)),
                                     ),
-                                    SizedBox(height: 7),
-                                  ],
-                                );
-                              },
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ],
+                            SizedBox(height: 13),
+                          ],
+                        ),
+                        /*),*/
                       ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
 
       bottomNavigationBar: BottomNavigationBar(
@@ -158,15 +136,15 @@ class SpecificGame extends StatelessWidget {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.game_controller_solid),
+            icon: Icon(CupertinoIcons.game_controller_solid, color: Colors.white70,),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.emoji_events_rounded, color: Colors.white70,),
+            icon: Icon(Icons.emoji_events_rounded),
             label: '',
           ),
         ],
-        currentIndex: 2,
+        currentIndex: 3,
         selectedItemColor: Color(0xFFFF0056),
         //onTap: _onItemTapped,
       ),
