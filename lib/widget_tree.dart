@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lgs/pantallas/home_page.dart';
 import 'package:lgs/pantallas/user_identification.dart';
+import 'package:lgs/pantallas/user_profile.dart';
 
 import 'auth.dart';
 
@@ -18,7 +18,7 @@ class _WidgetTreeState extends State<WidgetTree> {
         stream: Auth().authStateChanges,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return HomePage();
+            return UserProfile();
           } else {
             return UserIdentification();
           }

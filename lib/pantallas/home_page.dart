@@ -13,7 +13,6 @@ class HomePage extends StatelessWidget {
   });
   
   final User? user = Auth().currentUser;
-
   
   Future<void> signOut() async {
     await Auth().signOut();
@@ -65,8 +64,8 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // _userUid(),
-            // _signOutButton(),
+            _userUid(),
+            _signOutButton(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth*0.15),
               child: Column(

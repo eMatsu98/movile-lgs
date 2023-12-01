@@ -25,12 +25,16 @@ class _UserIdentificationState extends State<UserIdentification> {
   final TextEditingController _controllerConfirmPassword = TextEditingController();
   final TextEditingController _controllerUser = TextEditingController();
 
-  Stream<List<User>> readUsers() => FirebaseFirestore.instance
+  Stream<List<UserType>> readUsers() => FirebaseFirestore.instance
     .collection('users')
     .snapshots()
     .map((snapshot) =>
-      snapshot.docs.map((doc) => User.fromJson(doc.data())).toList()
+      snapshot.docs.map((doc) => UserType.fromJson(doc.data())).toList()
     );
+
+  Future<List<UserType>> categoryList() async {
+    return await readUsers().first;
+  }
 
   Future<void> signIn() async {
     try {
@@ -41,10 +45,6 @@ class _UserIdentificationState extends State<UserIdentification> {
         errorMessage = e.message;
       });
     }
-  }
-
-  Future<List<User>> categoryList() async {
-    return await readUsers().first;
   }
 
   Future<void> createUser() async {
@@ -67,7 +67,7 @@ class _UserIdentificationState extends State<UserIdentification> {
     }
     final myUid =   await getUID();
     final docUser = FirebaseFirestore.instance.collection('users').doc(myUid);
-    final user = User(
+    final user = UserType(
       uid: myUid,
       name: _controllerUser.text,
     );
@@ -79,7 +79,7 @@ class _UserIdentificationState extends State<UserIdentification> {
   }
 
   Future<bool> validateUser(currentName) async{
-    List<User> usersList = await categoryList();
+    List<UserType> usersList = await categoryList();
     for (var user in usersList){
       print('user = ${user.name}, current = ${currentName}');
       print(user.name == currentName ? 'Son iguales' : 'No se repite');
@@ -132,7 +132,12 @@ class _UserIdentificationState extends State<UserIdentification> {
       width: 300,
       height: 37,
       child: ElevatedButton(
-        onPressed: _login ? signIn : createUser,
+        onPressed: (){
+           _login ? signIn() : createUser();
+           setState(() {
+             _errorMessage();
+           });
+        },
         child: Text(
           title,
           style: TextStyle(
@@ -480,11 +485,11 @@ class _UserIdentificationState extends State<UserIdentification> {
   }
 }
 
-class User {
+class UserType {
   String uid;
   final String name;
 
-  User({
+  UserType({
     required this.uid,
     required this.name,
   });
@@ -494,7 +499,7 @@ class User {
     'name': name,
   };
 
-  static User fromJson(Map<String, dynamic> json) => User(
+  static UserType fromJson(Map<String, dynamic> json) => UserType(
     uid: json['uid'],
     name: json['name'],
     );
